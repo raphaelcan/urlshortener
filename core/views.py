@@ -36,6 +36,7 @@ def get_url(request, slug):
         short_url.counter = F("counter") + 1  # F-expression helps in that case to avoid race condition
         # more in the docs :
         # https://docs.djangoproject.com/en/3.2/ref/models/expressions/#avoiding-race-conditions-using-f
+        short_url.save()
     except ShortURL.DoesNotExist:
         return JsonResponse({}, status=404)
 

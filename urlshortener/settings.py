@@ -68,7 +68,6 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = 'urlshortener.wsgi.application'
 
 
